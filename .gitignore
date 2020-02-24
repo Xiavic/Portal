@@ -1,0 +1,6 @@
+node_modules/
+dist/*
+docker/apache/logs/*
+!docker/apache/logs/.keep
+.env
+npm-debug.log
