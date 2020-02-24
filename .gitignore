@@ -1,5 +1,5 @@
-node_modules/
-dist/*
+application/node_modules/
+application/dist/build/
 docker/apache/logs/*
 !docker/apache/logs/.keep
 .env

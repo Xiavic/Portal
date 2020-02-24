@@ -2,12 +2,15 @@ const path = require('path');
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.js",
+    entry: [
+        'jquery',
+        './src/index.js',
+    ],
     watchOptions: {
         ignored: './node_modules/'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/build'),
         filename: "[name].js"
     },
     devtool: "source-map",
@@ -20,6 +23,16 @@ module.exports = {
                     "css-loader",
                     "sass-loader"
                 ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: {
+                    loader:'file-loader',
+                    options: {
+                        name: "images/[name].[hash].[ext]",
+                        publicPath: './build/'
+                    }
+                }
             }
         ]
     }

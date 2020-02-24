@@ -7,5 +7,5 @@ services:
         ports:
             - "${XIAVIC_APACHE_PORT}:80"
         volumes:
-            - ./application/:/usr/local/apache2/htdocs/:delegated
+            - ./application/dist:/usr/local/apache2/htdocs/:delegated
             - ./docker/apache/logs:/var/log/apache2:delegated

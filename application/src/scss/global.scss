@@ -1,0 +1,90 @@
+@import "skeleton/skeleton";
+
+body {
+    background-image: url('../images/backgrounds/dark-mosaic.png');
+	background-repeat: repeat;
+	background-color: #000;
+	color: #FFF;
+	font-family: sans-serif;
+}
+.landing {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 80%, rgba(0,0,0,0.8) 100%),
+        url('../images/backgrounds/minecrap-landing.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    @media (min-width: 1200px) {
+        height: 90vh;
+    }
+
+    header {
+        background-image: url('../images/backgrounds/dark-mosaic.png');
+        background-color: rgba(0,0,0,0.2);
+        box-shadow: 0 0 15px 8px rgba(0,0,0,0.4);
+        padding-bottom: 1px;
+        .banner {
+            img#logo {
+                display: block;
+                margin: 0 auto;
+                height: 75px;
+                @media (min-width: 750px) {
+                    height: initial;
+                }
+            }
+        }
+        nav.top-nav {
+            margin-bottom: -16px;
+            ul {
+                list-style: none;
+                text-align: center;
+                li {
+                    display: inline-block;
+                    margin: 0 5px;
+                    a {
+                        text-decoration: none;
+                        color: #FFF;
+                        background-color: #181447;
+                        border: 1px rgba(255,255,255,0.5) solid;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        font-size: 20px;
+                        transition: background-color 0.3s ease-in-out,
+                            padding 0.3s ease-in-out;
+
+                        &:visited {
+                            color: #FFF;
+                        }
+
+                        &:hover {
+                            background-color: rgb(73, 68, 110);
+                            padding: 8px 13px;
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    .introduction {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        text-shadow: 4px 4px 2px #000;
+        h1 {
+            #xiavic-badge {
+                position: relative;
+                top:29px;
+                width: 100px;
+            }
+            > span {
+                position: relative;
+                left: -24px;
+            }
+        }
+    }
+}
