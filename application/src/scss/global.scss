@@ -1,5 +1,8 @@
 @import "skeleton/skeleton";
 
+$primary-color: #181447;
+
+
 body {
     background-image: url('../images/backgrounds/dark-mosaic.png');
 	background-repeat: repeat;
@@ -20,9 +23,9 @@ body {
     }
 
     header {
-        background-image: url('../images/backgrounds/dark-mosaic.png');
-        background-color: rgba(0,0,0,0.2);
-        box-shadow: 0 0 15px 8px rgba(0,0,0,0.4);
+        background: url('../images/backgrounds/dark-mosaic.png');
+        background-color: rgba(0,0,0,0.6);
+        box-shadow: 0 0 15px 8px rgba(0,0,0,0.8);
         padding-bottom: 1px;
         .banner {
             img#logo {
@@ -45,7 +48,7 @@ body {
                     a {
                         text-decoration: none;
                         color: #FFF;
-                        background-color: #181447;
+                        background-color: rgba($primary-color, 0.8);
                         border: 1px rgba(255,255,255,0.5) solid;
                         padding: 5px 10px;
                         border-radius: 5px;
@@ -87,4 +90,26 @@ body {
             }
         }
     }
+}
+
+.staggered-info {
+    .row {
+        margin-top: 50px;
+    }
+    .columns {
+        background: linear-gradient(to right, rgba($primary-color, 0.5) 60%, rgba(0,0,0,0) 100%);
+        padding: 30px 60px;
+        border-radius: 0 50px 50px 0;
+        box-shadow: 0 0 15px 8px rgba($primary-color,0.8);
+        &.offset-by-four, &.offset-by-one-half, &:nth-child(2) {
+            background: linear-gradient(to left, rgba($primary-color, 0.5) 60%, rgba(0,0,0,0) 100%);
+            text-align: right;
+            border-radius: 50px 0 0 50px;
+
+        }
+    }
+}
+
+footer {
+    margin: 50px 0 15px;
 }

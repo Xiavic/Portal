@@ -1,0 +1,49 @@
+{
+  "settings": {
+		"codeType": "dev",
+		"database_path": "db/annoucements.db",
+		"password": "yUQEUtrKuvgGrDwiVHD5",
+		"discord": {
+			"author": "Announcer",
+			"webhook_url": "https://discordapp.com/api/webhooks/527876898756493322/e3nIGDrFMBL3WB3en223Yxwh5Tnuj7ggoBT9I94L0yZBalV0lv38RJpUFk3ArXtGEWdW"
+		}
+	},
+  "servers": {
+    "HPK": {
+      "ip": "mc.xiav.icu",
+	  "friendly_ip": "mc.xiav.icu",
+      "port": 25565,
+      "displayPort": false,
+      "description": "This server is less about survival, but more on gaining relations with players and building huge castles or whatever you want, while keeping the aspects of survival of the minecraft wilderness.",
+      "operators": [
+        "PryPurity",
+        "asacavanagh",
+        "Pickle15"
+      ]
+    }
+	},
+	"staff": [
+		"8e655a45-78d6-42b0-8c69-73b5e5868b47"
+	],
+	"voteSites": {
+		"Planetminecraft": "http://bit.ly/2oWTHAi",
+        "TopG": "http://bit.ly/2tjKjIG",
+        "Minecraft-Server": "http://bit.ly/2MJxRek",
+        "MinecraftServers": "http://bit.ly/2yvnlEq",
+        "MinecraftServerList": "http://bit.ly/2Ia0FsO",
+        "ServerlistGames": "http://bit.ly/2vEN754",
+        "MCSL": "http://bit.ly/2QzSZph"
+	},
+	"galleryImages": [
+		{ "caption": "", "url": "images/gallery/1.png" },
+		{ "caption": "", "url": "images/gallery/2.png" },
+		{ "caption": "", "url": "images/gallery/3.png" },
+		{ "caption": "", "url": "images/gallery/4.png" },
+		{ "caption": "", "url": "images/gallery/5.png" },
+		{ "caption": "", "url": "images/gallery/6.png" },
+		{ "caption": "", "url": "images/gallery/7.png" },
+		{ "caption": "", "url": "images/gallery/8.png" },
+		{ "caption": "", "url": "images/gallery/9.png" },
+		{ "caption": "", "url": "images/gallery/10.png" }
+	]
+}
