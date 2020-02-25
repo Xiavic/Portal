@@ -30,7 +30,6 @@
 
       <nav class="top-nav">
         <ul>
-          <li><a href="index.php">Home</a></li>
           <li><a href="https://forums.xiav.icu">Forums</a></li>
           <li><a href="https://discord.gg/nY5yFhs">Discord</a></li>
           <li><a href="#vote">Vote</a></li>
