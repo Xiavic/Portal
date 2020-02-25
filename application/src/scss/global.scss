@@ -138,9 +138,8 @@ body {
             }
         }
         p, h5 {
-            margin: 0;
-            @media (min-width: 1200px) {
-                margin: initial
+            @media (max-width: 1199px) {
+                margin: 0;
             }
         }
     }
