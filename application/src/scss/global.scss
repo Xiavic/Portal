@@ -34,9 +34,9 @@ body {
             img#logo {
                 display: block;
                 margin: 0 auto;
-                height: 75px;
+                width: 100%;
                 @media (min-width: 750px) {
-                    height: initial;
+                    width: initial;
                 }
             }
         }
@@ -47,7 +47,11 @@ body {
                 text-align: center;
                 li {
                     display: inline-block;
-                    margin: 0 5px;
+                    margin: 8px 5px;
+                    @media (min-width: 750px) {
+                        margin: 0 5px;
+                    }
+    
                     a {
                         text-decoration: none;
                         color: #FFF;
@@ -76,7 +80,8 @@ body {
 
     .slideshow-controls {
         position: relative;
-        top: 10vh;
+        top: 2vh;
+        z-index: 10;
         font-size: 48px;
         @media (min-width: 1200px) {
             top: 25vh;
@@ -84,7 +89,6 @@ body {
         a.control {
             margin: 0 20px;
             text-decoration: none;
-            color: #FFF;
             background-color: $primary-color;
             border: 1px #FFF solid;
             padding: 0px 10px;
@@ -99,10 +103,15 @@ body {
 
             &.left {
                 float: left;
+                transform: rotate(180deg);
             }
 
             &.right {
                 float: right;
+            }
+
+            .arrow-img {
+                width: 64px;
             }
 
         }
@@ -112,8 +121,11 @@ body {
         position: absolute;
         bottom: 0;
         width: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 10%, rgba(0,0,0,0.9) 90%);
         text-align: center;
         text-shadow: 4px 4px 2px #000;
+        margin-bottom: -10px;
+        
         h1 {
             #xiavic-badge {
                 position: relative;
@@ -123,6 +135,12 @@ body {
             > span {
                 position: relative;
                 left: -24px;
+            }
+        }
+        p, h5 {
+            margin: 0;
+            @media (min-width: 1200px) {
+                margin: initial
             }
         }
     }
@@ -164,7 +182,11 @@ body {
 
             .side-server-list {
                 float:right;
-                width: 400px;
+                width: 100%;
+                @media (min-width: 750px) {
+                    width: 400px;
+                }
+
                 .side-server-item {
                     .status {
                         padding: 0 20px;

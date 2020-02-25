@@ -1,6 +1,5 @@
 @function landingImage($img) {
-    @return linear-gradient(to bottom, rgba(0,0,0,0) 80%, rgba(0,0,0,0.95) 100%),
-        url('../images/backgrounds/landing/'+ $img) center / cover no-repeat;
+    @return url('../images/backgrounds/landing/'+ $img) center / cover no-repeat;
 }
 
 .landing > .landing-img {

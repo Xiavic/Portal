@@ -40,8 +40,8 @@
     </header>
 
     <div class="slideshow-controls">
-      <a class="control left">&leftarrow;</a>
-      <a class="control right">&rightarrow;</a>
+      <a class="control left"><img class="arrow-img"></a>
+      <a class="control right"><img class="arrow-img"></a>
     </div>
 
     <div class="introduction">

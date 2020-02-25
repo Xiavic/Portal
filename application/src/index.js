@@ -2,9 +2,10 @@ import $ from 'jquery';
 import Clipboard from 'clipboard';
 import './scss/global.scss';
 import logoImg from './images/banner.png';
-import xiavicBadgeImg from './images/xiavic_badge.png';
+import xiavicBadgeImg from './images/xiavic_badge.gif';
 import sleipnirImg from './images/sleipnir.png';
 import secretImg from './images/secret-33853503-500-750.jpg'; 
+import arrowImg from './images/arrow.png';
 
 var slideshowIndex = 0;
 $(document).ready(function() {
@@ -14,6 +15,7 @@ $(document).ready(function() {
     $('.landing > .introduction #xiavic-badge').attr('src', xiavicBadgeImg);
     $('.sleipnir').attr('src', sleipnirImg);
     $('.secret-img').attr('src', secretImg);
+    $('.arrow-img').attr('src', arrowImg);
 
     $('a[href^="#"]').click(function(e) {
         e.preventDefault();
