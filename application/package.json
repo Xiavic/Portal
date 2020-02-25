@@ -4,8 +4,8 @@
   "description": "Portal Page",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "build-watch": "webpack --config webpack.config.js --watch",
+    "build": "webpack --config webpack.prod.js",
+    "build-watch": "webpack --config webpack.dev.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,13 +19,16 @@
   },
   "homepage": "https://github.com/Xiavic/Portal#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "file-loader": "^5.1.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "clipboard": "^2.0.4",

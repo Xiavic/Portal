@@ -1,19 +1,20 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
-    mode: "development",
     entry: [
         'jquery',
         './src/index.js',
     ],
-    watchOptions: {
-        ignored: './node_modules/'
-    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new ManifestPlugin()
+    ],
     output: {
         path: path.resolve(__dirname, 'dist/build'),
-        filename: "[name].js"
+        filename: "[name].[contenthash:8].js"
     },
-    devtool: "source-map",
     module: {
         rules: [
             {

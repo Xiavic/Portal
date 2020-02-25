@@ -4,6 +4,7 @@
   $status = new ServerStatus();
 	$voteSites = Config::getInstance()->getValue("voteSites");
 
+  $manifest = json_decode(file_get_contents('./build/manifest.json'), true);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/icon" href="favicon.ico" />
-  <script src="build/main.js"></script>
+  <script src="build/<?php echo $manifest['main.js']; ?>"></script>
 </head>
 <body>
   <div class="section landing">
