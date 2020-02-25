@@ -21,7 +21,7 @@
 		 */
 		const cacheDir = "cache/";
 		const fileName = "serverStatus.json";
-		const cacheExpire = 100; //in minutes
+		const cacheExpire = 1; //in minutes
 
 		private $servers;
 		private $jsonParser;

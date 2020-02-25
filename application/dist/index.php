@@ -17,9 +17,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/icon" href="favicon.ico" />
+  <script src="build/main.js"></script>
 </head>
 <body>
   <div class="section landing">
+    <div class="landing-img l1"></div>
     <header>
       <div class="banner">
         <img id="logo">
@@ -27,20 +29,30 @@
 
       <nav class="top-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="https://forums.xiav.icu">Forums</a></li>
           <li><a href="https://discord.gg/nY5yFhs">Discord</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="vote.html">Vote</a></li>
-          <li><a href="store.html">Store</a></li>
+          <li><a href="#vote">Vote</a></li>
+          <li><a href="http://store.xiav.icu">Store</a></li>
         </ul>
       </nav>
     </header>
 
+    <div class="slideshow-controls">
+      <a class="control left">&leftarrow;</a>
+      <a class="control right">&rightarrow;</a>
+    </div>
+
     <div class="introduction">
       <h1><img id="xiavic-badge"><span>iavic</span></h1>
       <h5>The only Minecraft server you need.</h5>
-      <p>Start playing today @ <addr>mc.xiav.icu</addr></p>
+      <p>
+        Start playing today @ 
+        <button class="button server-addr" data-clipboard-text="mc.xiav.icu">
+          <div class="copy-alert">Copied!</div>
+          mc.xiav.icu
+        </button>
+      </p>
     </div>
 
   </div>
@@ -49,20 +61,25 @@
 
     <div class="row">
         <div class="eight columns offset-by-four">
-          <div class="sideServerList">
+          <div class="side-server-list">
             <?php foreach ($status->getServers() as $key => $value): ?>
             <?php $st = $status->getStatus($key); ?>
-                  <div class="sideServerListItem">
-                    <div class="status <?php echo $st["online"] ? "statusOnline" : "statusOffline" ?>"><b><?=$key?></b>
-                      <span class="sideServerListRight">Players <?=!empty($st["players"]) ? ($st["info"]["Players"] ."/". $st["info"]["MaxPlayers"]) : "N/A" ?></span>
+                  <div class="side-server-item">
+                    <div class="status <?php echo $st["online"] ? "online" : "offline" ?>">
+                      <span class="server-name"><?=$key?></span>
+                      <span>Players <?=!empty($st["players"]) ? ($st["info"]["Players"] ."/". $st["info"]["MaxPlayers"]) : "N/A" ?></span>
                     </div>
                     <div>
-                      <?=$status->getIpWithPort($key, true)?> &nbsp;&nbsp;
+                      <button class="button server-addr" data-clipboard-text="<?=$status->getIpWithPort($key, true)?>">
+                        <div class="copy-alert">Copied!</div>
+                        <?=$status->getIpWithPort($key, true)?> &nbsp;&nbsp;
+                      </button>
+
                       Version: <?php echo $st['online'] ? $st['info']['Version'] : ''; ?>
                     </div>
                     <?php if ($st['online']) { ?>
-                    <h5>Online Players:</h5>
-                    <div>					
+                    <h6>Online Players:</h6>
+                    <div class="server-players">					
                       <?php foreach ($st['players'] as $name => $uuid) { ?>
                         <img class="mcSkin" src="https://crafatar.com/avatars/<?=$uuid?>?size=32&default=MHF_Steve" alt="<?=$name?>" title="<?=$name?>">
                       <?php } ?>
@@ -76,8 +93,8 @@
 
       <div class="row">
         <div class="eight columns">
-          <h3>Vote for Xiavic!</h3>
-          <p>Looking to make grab some keys at a relatively fast rate?</p>
+          <h3 id="vote">Vote for Xiavic!</h3>
+          <p>Looking to snag Xiavic keys? Then start voting now to be rewarded!</p>
           <p style="color:#F9FF03;">Please wait approx. 10 seconds between your votes!<br />
           If you don't, you may not receive your in-game rewards.<br />
           <ul>
@@ -89,17 +106,19 @@
       </div>
 
       <div class="row">
-        <div class="one-half columns offset-by-one-half">
+        <div class="eight columns offset-by-four">
           <img class="sleipnir">
-          <ul>
-            <li>Server hardware</li>
-            <li>Cpu: Ryzen 3600 3.6Ghz 6 cores</li>
-            <li>Ram: DDR4 32GB 3200Mhz</li>
-            <li>
-            Storage: 512GB Samsung 970 Evo<br>
-            2x WD Red 4TB HDDs
-            </li>
-          </ul>
+          <div class="u-pull-right">
+            <h6>Server Hardware Specifications</h6>
+            <ul class="specs">
+              <li>Cpu: Ryzen 3600 3.6Ghz 6 cores</li>
+              <li>Ram: DDR4 32GB 3200Mhz</li>
+              <li>
+              Storage: 512GB Samsung 970 Evo<br>
+              2x WD Red 4TB HDDs
+              </li>
+            </ul>
+          </div>
         </div>
       </div>  
 
@@ -109,11 +128,13 @@
     <div class="row">
       <div class="one-half columns offset-by-one">
         <h5>Xiavic &copy; 2018 - <?php echo date('Y') ?></h5>
-        <p>Designed by Pickle.</p>
+        <p>
+          <img class="secret-img">
+          Designed by P<span class="secret-trigger">i</span>ckle.
+        </p>
       </div>
     </div>
   </footer>
 
-  <script src="build/main.js"></script>
 </body>
 </html>

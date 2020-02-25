@@ -1,7 +1,8 @@
 @import "skeleton/skeleton";
+@import "landing";
 
 $primary-color: #181447;
-
+$glow-color: #6FFF00;
 
 body {
     background-image: url('../images/backgrounds/dark-mosaic.png');
@@ -10,18 +11,20 @@ body {
 	color: #FFF;
 	font-family: sans-serif;
 }
+
+.button {
+    color: #fff;
+    &:hover {
+        color: darken(#fff, 50);
+    }
+}
+
 .landing {
     position: relative;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 80%, rgba(0,0,0,0.8) 100%),
-        url('../images/backgrounds/minecrap-landing.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 50vh;
     @media (min-width: 1200px) {
         height: 90vh;
     }
-
     header {
         background: url('../images/backgrounds/dark-mosaic.png');
         background-color: rgba(0,0,0,0.6);
@@ -53,9 +56,7 @@ body {
                         padding: 5px 10px;
                         border-radius: 5px;
                         font-size: 20px;
-                        transition: background-color 0.3s ease-in-out,
-                            padding 0.3s ease-in-out;
-
+                        transition: all 0.3s ease-in-out;
                         &:visited {
                             color: #FFF;
                         }
@@ -63,12 +64,47 @@ body {
                         &:hover {
                             background-color: rgb(73, 68, 110);
                             padding: 8px 13px;
+                            box-shadow: 0 0 5px $glow-color;
                         }
 
 
                     }
                 }
             }
+        }
+    }
+
+    .slideshow-controls {
+        position: relative;
+        top: 10vh;
+        font-size: 48px;
+        @media (min-width: 1200px) {
+            top: 25vh;
+        }
+        a.control {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #FFF;
+            background-color: $primary-color;
+            border: 1px #FFF solid;
+            padding: 0px 10px;
+            border-radius: 5px;
+            transition: opacity 0.3s linear;
+            cursor: pointer;
+            opacity: 0.3;
+            &:hover {
+                opacity: 0.8;
+                box-shadow: 0 0 5px $glow-color;
+            }
+
+            &.left {
+                float: left;
+            }
+
+            &.right {
+                float: right;
+            }
+
         }
     }
 
@@ -95,21 +131,114 @@ body {
 .staggered-info {
     .row {
         margin-top: 50px;
-    }
-    .columns {
-        background: linear-gradient(to right, rgba($primary-color, 0.5) 60%, rgba(0,0,0,0) 100%);
-        padding: 30px 60px;
-        border-radius: 0 50px 50px 0;
-        box-shadow: 0 0 15px 8px rgba($primary-color,0.8);
-        &.offset-by-four, &.offset-by-one-half, &:nth-child(2) {
-            background: linear-gradient(to left, rgba($primary-color, 0.5) 60%, rgba(0,0,0,0) 100%);
-            text-align: right;
-            border-radius: 50px 0 0 50px;
+        &:first-child {
+            margin-top: 10vh;
+        }
+        .columns {
+            $bgcolor: lighten($primary-color,20);
+            background: linear-gradient(to right, rgba($bgcolor, 0.5) 60%, rgba(0,0,0,0) 100%);
+            padding: 30px 60px;
+            border-radius: 0 50px 50px 0;
+            box-shadow: 0 0 15px 8px rgba($bgcolor,0.4);
+            &.offset-by-four, &.offset-by-one-half, &:nth-child(2) {
+                background: linear-gradient(to left, rgba($bgcolor, 0.5) 60%, rgba(0,0,0,0) 100%);
+                text-align: right;
+                border-radius: 50px 0 0 50px;
 
+            }
+
+            ul.specs {
+                text-align: left;
+                margin: 0 0 0 40px;
+            }
+
+            #vote {
+                display: inline-block;
+                transform-origin: 50% 50%;
+                animation: 2s linear 0s infinite alternate vote-jiggle;
+            }
+
+            .sleipnir {
+                animation: 3s linear 0s infinite alternate sleipnir-pulsate;
+            }
+
+            .side-server-list {
+                float:right;
+                width: 400px;
+                .side-server-item {
+                    .status {
+                        padding: 0 20px;
+                        border-radius: 10px;
+                        text-shadow: 2px 2px 2px #000;
+                        margin-bottom: 4px;
+                        &.online {
+                            background: linear-gradient(to bottom,  rgba(191,210,85,1) 9%,rgba(142,185,42,1) 46%,rgba(114,170,0,1) 72%,rgba(158,203,45,1) 100%); /* W3C */
+                        }
+                        &.offline {
+                            background: linear-gradient(to bottom,  rgba(232,74,87,1) 9%,rgba(220,37,24,1) 46%,rgba(190,19,0,1) 72%,rgba(231,43,33,1) 100%); /* W3C */
+                        }
+                        .server-name {
+                            font-weight: 500;
+                            float: left;
+                        }
+                    }
+                    .server-players {
+                        .mcSkin {
+                            transition: .5s all ease-in-out;
+                            &:hover {
+                                transform: rotate(720deg) scale(2);
+                                box-shadow: 0 0 5px $glow-color;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 footer {
+    position: relative;
     margin: 50px 0 15px;
+}
+
+.server-addr {
+    position: relative;
+    .copy-alert {
+        position: absolute;
+        bottom: -52px;
+        left: 24px;
+        background-color: lighten($primary-color, 20);
+        padding: 0 20px;
+        border-radius: 5px;
+        border: 1px rgba(255,255,255, 0.3) solid;
+        display: none;
+    }
+}
+
+@keyframes vote-jiggle {
+    to { 
+        color: lighten($primary-color, 50); 
+        transform: scale(0.8) rotate(10deg);
+    }
+    from { 
+        color: yellow; 
+        transform: scale(1) rotate(-10deg);
+    }
+}
+
+@keyframes sleipnir-pulsate {
+    to { 
+        transform: scale(0.9);
+    }
+    from { 
+        transform: scale(1.1);
+    }
+}
+
+.secret-img {
+    position: absolute;
+    bottom: 50px;
+    height:  375px;
+    display: none;
 }

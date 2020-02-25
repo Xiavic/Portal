@@ -1,0 +1,53 @@
+@function landingImage($img) {
+    @return linear-gradient(to bottom, rgba(0,0,0,0) 80%, rgba(0,0,0,0.95) 100%),
+        url('../images/backgrounds/landing/'+ $img) center / cover no-repeat;
+}
+
+.landing > .landing-img {
+    position: absolute;
+    height: 50vh;
+    width: 100vw;
+    overflow-x: hidden;
+    z-index: -1;
+    @media (min-width: 1200px) {
+        height: 90vh;
+    }
+    &.l1 {
+        background: landingImage('1.png');
+    }
+
+    &.l2 {
+        background: landingImage('2.png');
+    }
+
+    &.l3 {
+        background: landingImage('3.png');
+    }
+
+    &.l4 {
+        background: landingImage('4.png');
+    }
+
+    &.l5 {
+        background: landingImage('5.png');
+    }
+
+    &.l6 {
+        background: landingImage('6.png');
+    }
+
+    &.l7 {
+        background: landingImage('7.png');
+    }
+
+    &.l8 {
+        background: landingImage('8.png');
+    }
+    &.l9 {
+        background: landingImage('9.png');
+    }
+    &.l10 {
+        background: landingImage('10.png');
+    }
+
+}
