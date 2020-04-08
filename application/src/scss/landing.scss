@@ -8,6 +8,7 @@
     width: 100%; 
     overflow-x: hidden;
     z-index: -1;
+    display: none;
     @media (min-width: 1200px) {
         height: 90vh;
     }
