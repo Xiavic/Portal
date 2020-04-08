@@ -73,7 +73,7 @@ function setLandingImg(index) {
                     });
             });
     } else {
-        l.removeClass(classes).addClass('l'+ slideshowIndex);
+        l.removeClass(classes).addClass('l'+ slideshowIndex).fadeIn();
     }
 }
 
