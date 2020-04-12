@@ -5,6 +5,6 @@ Deployment instructions
 ```
 git pull
 
-cd appilcation
+cd appLication
 
 npm run build
