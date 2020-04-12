@@ -2,8 +2,9 @@ A portal page for xiav.icu
 
 Deployment instructions
 
-```git pull
+```
+git pull
 
 cd appilcation
 
-npm run build```
+npm run build
