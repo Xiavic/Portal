@@ -112,7 +112,7 @@
             <h6>Server Hardware Specifications</h6>
             <ul class="specs">
               <li>Cpu: Ryzen 3600 3.6Ghz 6 cores</li>
-              <li>Ram: DDR4 32GB 3200Mhz</li>
+              <li>Ram: DDR4 64GB 3200Mhz</li>
               <li>
               Storage: 512GB Samsung 970 Evo<br>
               2x WD Red 4TB HDDs
