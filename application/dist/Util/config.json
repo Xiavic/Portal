@@ -15,12 +15,9 @@
 		}
 	},
 	"voteSites": {
-		"Planetminecraft": "http://bit.ly/2oWTHAi",
-		"TopG": "http://bit.ly/2tjKjIG",
+		"Planetminecraft": "https://www.planetminecraft.com/server/xiavic-survival-5500627/",
+		"TopG": "https://topg.org/minecraft-servers/server-640901",
 		"Minecraft-Server": "http://bit.ly/2MJxRek",
-		"MinecraftServers": "http://bit.ly/2yvnlEq",
-		"MinecraftServerList": "http://bit.ly/2Ia0FsO",
-		"ServerlistGames": "http://bit.ly/2vEN754",
 		"MCSL": "http://bit.ly/2QzSZph"
 	}
 }
