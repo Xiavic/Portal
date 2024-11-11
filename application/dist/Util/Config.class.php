@@ -26,5 +26,4 @@ class Config {
 	public function getValue($value) {
 		return $this->jsonParser->jsonCache[$value];
 	}
-
 }

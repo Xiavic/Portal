@@ -3,7 +3,7 @@
 		"Xiavic": {
 		"ip": "mc.xiav.icu",
 		"friendly_ip": "mc.xiav.icu",
-		"port": 25565,
+		"port": 25550,
 		"displayPort": false,
 		"operators": [
 			"PryPurity",

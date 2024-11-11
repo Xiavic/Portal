@@ -1,6 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 module.exports = {
     entry: [
@@ -9,11 +9,20 @@ module.exports = {
     ],
     plugins: [
         new CleanWebpackPlugin(),
-        new ManifestPlugin()
+        new WebpackManifestPlugin({
+            publicPath: 'build'
+        })
     ],
     output: {
         path: path.resolve(__dirname, 'dist/build'),
-        filename: "[name].[contenthash:8].js"
+        assetModuleFilename: (pathData) => {
+            const filepath = path
+              .dirname(pathData.filename)
+              .split("/")
+              .slice(1)
+              .join("/");
+            return `${filepath}/[name].[hash][ext][query]`;
+          },
     },
     module: {
         rules: [
@@ -27,13 +36,7 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: {
-                    loader:'file-loader',
-                    options: {
-                        name: "images/[name].[hash].[ext]",
-                        publicPath: './build/'
-                    }
-                }
+                type: 'asset/resource'
             }
         ]
     }

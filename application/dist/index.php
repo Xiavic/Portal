@@ -1,6 +1,6 @@
 <?php
-  require_once 'Util/Config.class.php';
-  require_once 'Util/ServerStatus.class.php';
+  require_once __DIR__ .'/Util/Config.class.php';
+  require_once __DIR__ .'/Util/ServerStatus.class.php';
   $status = new ServerStatus();
 	$voteSites = Config::getInstance()->getValue("voteSites");
 
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/icon" href="favicon.ico" />
-  <script src="build/<?php echo $manifest['main.js']; ?>"></script>
+  <script src="<?php echo $manifest['main.js']; ?>"></script>
 </head>
 <body>
   <div class="section landing">
@@ -30,10 +30,8 @@
 
       <nav class="top-nav">
         <ul>
-          <li><a href="https://forums.xiav.icu">Forums</a></li>
           <li><a href="https://discord.gg/nY5yFhs">Discord</a></li>
           <li><a href="#vote">Vote</a></li>
-          <li><a href="http://store.xiav.icu">Store</a></li>
         </ul>
       </nav>
     </header>
@@ -67,7 +65,7 @@
                   <div class="side-server-item">
                     <div class="status <?php echo $st["online"] ? "online" : "offline" ?>">
                       <span class="server-name"><?=$key?></span>
-                      <span>Players <?=!empty($st["players"]) ? ($st["info"]["Players"] ."/". $st["info"]["MaxPlayers"]) : "N/A" ?></span>
+                      <span>Players <?=$st["info"]["Players"] ."/". $st["info"]["MaxPlayers"]  ?></span>
                     </div>
                     <div>
                       <button class="button server-addr" data-clipboard-text="<?=$status->getIpWithPort($key, true)?>">
@@ -77,14 +75,14 @@
 
                       Version: <?php echo $st['online'] ? $st['info']['Version'] : ''; ?>
                     </div>
-                    <?php if ($st['online']) { ?>
+                    <?php if ($st['online'] && $st['players'] != null): ?>
                     <h6>Online Players:</h6>
                     <div class="server-players">					
-                      <?php foreach ($st['players'] as $name => $uuid) { ?>
+                      <?php foreach ($st['players'] as $name => $uuid): ?>
                         <img class="mcSkin" src="https://crafatar.com/avatars/<?=$uuid?>?size=32&default=MHF_Steve" alt="<?=$name?>" title="<?=$name?>">
-                      <?php } ?>
+                      <?php endforeach; ?>
                     </div>
-                    <?php } ?>
+                    <?php endif; ?>
                   </div>
             <?php endforeach; ?>
           </div>
@@ -111,11 +109,11 @@
           <div class="u-pull-right">
             <h6>Server Hardware Specifications</h6>
             <ul class="specs">
-              <li>Cpu: Ryzen 3600 3.6Ghz 6 cores</li>
-              <li>Ram: DDR4 64GB 3200Mhz</li>
+              <li>Cpu: Ryzen 5600X 3.6Ghz 6 cores</li>
+              <li>Ram: DDR4 128GB 3200Mhz</li>
               <li>
               Storage: 512GB Samsung 970 Evo<br>
-              2x WD Red 4TB HDDs
+              4x EXOS 14TB HDDs
               </li>
             </ul>
           </div>

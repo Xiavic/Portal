@@ -3,7 +3,7 @@
 class JsonParser {
 
 	public $isDirty;
-	public $jsonCache;
+	public $jsonCache = [];
 
 	public $expiredJson;
 
@@ -48,5 +48,3 @@ class JsonParser {
 		}
 	}
 }
-
-?>

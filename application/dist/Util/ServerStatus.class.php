@@ -77,10 +77,9 @@
 			//try the cache first
 			$this->jsonParser->jsonCache = $this->jsonParser->fetchJson(ServerStatus::cacheDir, ServerStatus::fileName, ServerStatus::cacheExpire);
             
-			$tempJson = array();
+			$tempJson = [];
 
 			$query = new MinecraftQuery();
-            
 			foreach ($this->servers as $key => $value) {
 				if (!isset($this->jsonParser->jsonCache[$key]) || $this->jsonParser->jsonCache == null) {
 				//json is expired or is missing. Or possiblly the server array list was changed during cache cycle?
@@ -88,6 +87,7 @@
 					try {
 						$query->Connect($value['ip'], $value['port'], 3);
 						
+						//var_dump($query);
 						//process players
 						$players = $this->getPlayersUUID($query->GetPlayers());
 						
@@ -100,6 +100,7 @@
                             print $e;
                         }
 						$tempJson[$key] = array("online" => false, "info" => $this->jsonParser->expiredJson[$key]["info"]);
+						var_dump($e);
 					}
 
 				}

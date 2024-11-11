@@ -157,7 +157,6 @@ body {
             background: linear-gradient(to right, rgba($bgcolor, 0.5) 60%, rgba(0,0,0,0) 100%);
             padding: 30px 60px;
             border-radius: 0 50px 50px 0;
-            box-shadow: 0 0 15px 8px rgba($bgcolor,0.4);
             &.offset-by-four, &.offset-by-one-half, &:nth-child(2) {
                 background: linear-gradient(to left, rgba($bgcolor, 0.5) 60%, rgba(0,0,0,0) 100%);
                 text-align: right;
