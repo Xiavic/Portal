@@ -1,23 +1,23 @@
   {
 	"servers": {
 		"Xiavic": {
-		"ip": "mc.xiav.icu",
-		"friendly_ip": "mc.xiav.icu",
-		"port": 25550,
-		"displayPort": false,
-		"operators": [
-			"PryPurity",
-			"Asacavanagh",
-			"Pickle15",
-			"Kerlab",
-			"Azcreep"
-		]
-		}
+			"ip": "mc.xiav.icu",
+			"friendly_ip": "mc.xiav.icu",
+			"port": 25550,
+			"displayPort": false
+			}
 	},
 	"voteSites": {
 		"Planetminecraft": "https://www.planetminecraft.com/server/xiavic-survival-5500627/",
 		"TopG": "https://topg.org/minecraft-servers/server-640901",
 		"Minecraft-Server": "http://bit.ly/2MJxRek",
 		"MCSL": "http://bit.ly/2QzSZph"
-	}
+	},
+	"operators": {
+		"PryPurity": "99737067-c763-4851-8d9b-158067e63d79",
+		"Asacavanagh": "cd8af4fc-823a-4941-b01c-472dcd7a1a30",
+		"Pickle15": "8e655a45-78d6-42b0-8c69-73b5e5868b47",
+		"Kerlab": "88348126-b672-42df-b942-17dee59ee2f6",
+		"Azcreep": "f63633d3-9133-4a46-a8b8-7ee08b72ac78"
+	}	
 }

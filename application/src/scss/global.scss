@@ -180,7 +180,8 @@ body {
             }
 
             .side-server-list {
-                float:right;
+                margin-right: 0px;
+                margin-left: auto;
                 width: 100%;
                 @media (min-width: 750px) {
                     width: 400px;
@@ -203,16 +204,46 @@ body {
                             float: left;
                         }
                     }
-                    .server-players {
-                        .mcSkin {
-                            transition: .5s all ease-in-out;
-                            &:hover {
-                                transform: rotate(720deg) scale(2);
-                                box-shadow: 0 0 5px $glow-color;
-                            }
-                        }
-                    }
                 }
+            }
+        }
+    }
+}
+
+.server-players-heads {
+    .mcSkin {
+        transition: .5s all ease-in-out;
+        &:hover {
+            transform: rotate(720deg) scale(2);
+            box-shadow: 0 0 5px $glow-color;
+        }
+    }
+}
+
+.server-operators {
+    .operator {
+        display: inline-block;
+        width: 120px;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        .player-name {
+            text-align: center;
+            color: #FFF;
+            background-color: rgba($primary-color, 0.8);
+            border: 1px rgba(255,255,255,0.5) solid;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease-in-out;
+            &:visited {
+                color: #FFF;
+            }
+
+            &:hover {
+                background-color: rgb(73, 68, 110);
+                box-shadow: 0 0 5px $glow-color;
             }
         }
     }

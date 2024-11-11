@@ -3,6 +3,7 @@
   require_once __DIR__ .'/Util/ServerStatus.class.php';
   $status = new ServerStatus();
 	$voteSites = Config::getInstance()->getValue("voteSites");
+  $operators = Config::getInstance()->getValue("operators");
 
   $manifest = json_decode(file_get_contents('./build/manifest.json'), true);
 ?>
@@ -77,7 +78,7 @@
                     </div>
                     <?php if ($st['online'] && $st['players'] != null): ?>
                     <h6>Online Players:</h6>
-                    <div class="server-players">					
+                    <div class="server-players-heads">					
                       <?php foreach ($st['players'] as $name => $uuid): ?>
                         <img class="mcSkin" src="https://crafatar.com/avatars/<?=$uuid?>?size=32&default=MHF_Steve" alt="<?=$name?>" title="<?=$name?>">
                       <?php endforeach; ?>
@@ -86,6 +87,17 @@
                   </div>
             <?php endforeach; ?>
           </div>
+          <div>
+          <h6>The Bitches:</h6>
+              <div class="server-operators">		
+                <?php foreach ($operators as $name => $uuid): ?>
+                  <div class="operator">
+                    <img class="mcSkin" src="https://crafatar.com/renders/body/<?=$uuid?>?scale=3&overlay=true&default=MHF_Steve" alt="<?=$name?>" title="<?=$name?>">
+                    <div class="player-name"><?=$name?></div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
         </div>
       </div>
 
